@@ -1,0 +1,32 @@
+version: '2'
+services:
+    ubuntu-nginx-php:
+        image: uumyheart/ubuntu-nginx-php:1.2
+        ports: 
+            - "80:80"
+        volumes:
+            - .:/var/www/html
+    redis:
+        image: redis:alpine
+        ports:
+            - "6379:6379"
+    mysql:
+        image: mysql:5.7
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: homestead
+            MYSQL_USER: homestead
+            MYSQL_PASSWORD: secret
+        volumes:
+            - data:/var/lib/mysql
+volumes:
+    data:
+        driver: "local"
+
+
+
+
+
+

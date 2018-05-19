@@ -8,5 +8,5 @@ $app = require __DIR__ . '/../bootstrap/app.php';
 
 // 处理请求
 $request = Illuminate\Http\Request::createFromGlobals();
-$response = $app['router']->dispatch($request);
+$response = app('router')->dispatch($request);
 $response->send();

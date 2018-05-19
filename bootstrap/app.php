@@ -16,6 +16,6 @@ $manager->bootEloquent();
 // 路由
 (new Illuminate\Events\EventServiceProvider($app))->register();
 (new Illuminate\Routing\RoutingServiceProvider($app))->register();
-require __DIR__ . '/../app/Http/routes.php';
+require __DIR__ . '/../app/routes.php';
 
 return $app;
