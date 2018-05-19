@@ -19,3 +19,10 @@ if (! function_exists('route')) {
 		return app('router');
 	}
 }
+
+if (! function_exists('env')) {
+	function env($key, $default = null)
+	{
+		return $_ENV[$key] ? $_ENV[$key] : $default;
+	}
+}
